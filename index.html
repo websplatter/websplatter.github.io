@@ -18,16 +18,16 @@
     <link href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <section>
+    <section class="hero-section">
       <div class="jumbotron text-center mt-0">
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-              <h2 class="project-title"><b>WebSplatter: Efficient and Faithful In-Browser<br>3D Gaussian Splatting across Devices via WebGPU</b></h2>
+              <h2 class="paper-title"><b>WebSplatter: Efficient and Faithful In-Browser<br class="d-none d-lg-block"> 3D Gaussian Splatting across Devices via WebGPU</b></h2>
               <br>
               <h2 class="venue-title">ACM Multimedia 2026</h2>
               <hr>
-              <h5 class="authors">
+              <h5 class="author-list">
                 <br>
                 Yudong Han<sup>1</sup>&nbsp;&nbsp;&nbsp;
                 Chao Xu<sup>2</sup>&nbsp;&nbsp;&nbsp;
@@ -44,18 +44,18 @@
                 <sup>3</sup>Nanyang Technological University
               </p>
               <br>
-              <div class="row justify-content-center">
+              <div class="row justify-content-center resource-row">
                 <div class="column">
-                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://arxiv.org/abs/2602.03207" role="button" target="_blank" rel="noreferrer">ArXiv</a></p>
+                  <p class="mb-4"><a class="btn btn-lg btn-light" href="https://arxiv.org/abs/2602.03207" role="button" target="_blank" rel="noreferrer">ArXiv</a></p>
                 </div>
                 <div class="column">
-                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/yudshj/WebSplatter" role="button" target="_blank" rel="noreferrer">Code</a></p>
+                  <p class="mb-4"><a class="btn btn-lg btn-light" href="https://github.com/yudshj/WebSplatter" role="button" target="_blank" rel="noreferrer">Code</a></p>
                 </div>
                 <div class="column">
-                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://doi.org/10.1145/3767308.3835220" role="button" target="_blank" rel="noreferrer">DOI</a></p>
+                  <p class="mb-4"><a class="btn btn-lg btn-light" href="https://doi.org/10.1145/3767308.3835220" role="button" target="_blank" rel="noreferrer">DOI</a></p>
                 </div>
                 <div class="column">
-                  <p class="mb-5"><a class="btn btn-large btn-light" href="#demo" role="button">Demo</a></p>
+                  <p class="mb-4"><a class="btn btn-lg btn-light" href="#demo" role="button">Demo</a></p>
                 </div>
               </div>
             </div>
@@ -64,32 +64,36 @@
       </div>
     </section>
 
-    <section id="demo">
-      <div class="container project-container">
+    <section class="feature-section" id="demo">
+      <div class="container-fluid feature-container">
         <div class="row">
           <div class="col-12">
             <h3><strong>Interactive Demo</strong></h3>
             <hr class="section-rule">
-            <div class="demo-wrapper">
-              <iframe
-                title="Interactive WebSplatter viewer showing Van Gogh Room"
-                src="demo/?model_url=%2Fdemo%2Fscenes%2Fvan_gogh_room%2Fvan_gogh_room_spz.glb&amp;camera_url=scenes%2Fvan_gogh_room%2Fcameras.json&amp;clip_sh_degree=0&amp;sort=none&amp;renderer=gaussian&amp;animation=0"
-                allow="fullscreen"
-              ></iframe>
-            </div>
-            <p class="text-center demo-help">
-              <b>Left click to rotate, right click to translate, and scroll to zoom.</b><br>
-              Van Gogh Room contains 341,294 splats and is delivered as a 5.05 MiB SPZ-compressed GLB.
-              <a href="demo/?model_url=%2Fdemo%2Fscenes%2Fvan_gogh_room%2Fvan_gogh_room_spz.glb&amp;camera_url=scenes%2Fvan_gogh_room%2Fcameras.json&amp;clip_sh_degree=0&amp;sort=none&amp;renderer=gaussian&amp;animation=0" target="_blank">Open the demo in full screen.</a>
-            </p>
+            <figure class="feature-card viewer-panel">
+              <div class="demo-wrapper">
+                <iframe
+                  title="Interactive WebSplatter viewer showing Van Gogh Room"
+                  src="demo/?model_url=%2Fdemo%2Fscenes%2Fvan_gogh_room%2Fvan_gogh_room_spz.glb&amp;camera_url=scenes%2Fvan_gogh_room%2Fcameras.json&amp;clip_sh_degree=0&amp;sort=none&amp;renderer=gaussian&amp;animation=0"
+                  allow="fullscreen"
+                ></iframe>
+              </div>
+              <figcaption>
+                <span class="caption-copy">
+                  <strong>WebSplatter</strong>
+                  <small>Van Gogh Room · 341,294 splats · 5.05 MiB SPZ-compressed GLB</small>
+                </span>
+                <span class="viewer-actions">
+                  <small>Drag to rotate · right-drag to translate · scroll to zoom</small>
+                  <a href="demo/?model_url=%2Fdemo%2Fscenes%2Fvan_gogh_room%2Fvan_gogh_room_spz.glb&amp;camera_url=scenes%2Fvan_gogh_room%2Fcameras.json&amp;clip_sh_degree=0&amp;sort=none&amp;renderer=gaussian&amp;animation=0" target="_blank" rel="noreferrer">Open full screen ↗</a>
+                </span>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </section>
-    <br>
-    <br>
-
-    <section>
+    <section class="content-section">
       <div class="container project-container">
         <div class="row">
           <div class="col-12">
@@ -102,20 +106,15 @@
         </div>
       </div>
     </section>
-    <br>
-    <br>
-
-    <section>
+    <section class="content-section">
       <div class="container project-container">
         <div class="row">
           <div class="col-12">
             <h3><strong>Method</strong></h3>
             <hr class="section-rule">
-            <div class="text-center">
+            <div class="method-figure text-center">
               <img class="img-fluid method-image" src="assets/WebSplatter.svg?v=light" alt="Overview of the WebSplatter rendering pipeline">
             </div>
-            <br>
-            <br>
             <p class="text-justify">
               WebSplatter adapts the complete 3DGS rendering pipeline to the WebGPU execution model. Its wait-free radix sort decomposes cross-workgroup dependencies into explicitly synchronized dispatches and uses bitmap-popcount ranking to preserve deterministic progress across GPU architectures. Its hardware-accelerated vertex-fragment rasterization pipeline removes memory-intensive tile-splat pair buffers, while opacity-aware quad sizing reduces overdraw without changing Gaussian evaluation.
             </p>
@@ -123,10 +122,7 @@
         </div>
       </div>
     </section>
-    <br>
-    <br>
-
-    <section>
+    <section class="content-section">
       <div class="container project-container">
         <div class="row">
           <div class="col-12">
@@ -135,7 +131,7 @@
             <p class="text-justify">
               WebSplatter was evaluated on eleven consumer devices spanning NVIDIA, AMD, Apple, Qualcomm, and MediaTek GPU architectures. It rendered every benchmark scene on every tested device without failure, achieved 1.1 to 2.5 times speedups over the surviving web baselines, and matched the native CUDA renderer with an average ΔPSNR of 0.07 dB across 156 views from five scenes.
             </p>
-            <div class="row text-center result-row">
+            <div class="row text-center result-row result-surface">
               <div class="col-6 col-md-3"><h3><strong>11</strong></h3><p>Devices</p></div>
               <div class="col-6 col-md-3"><h3><strong>5</strong></h3><p>GPU architectures</p></div>
               <div class="col-6 col-md-3"><h3><strong>1.1–2.5×</strong></h3><p>Speedup</p></div>
@@ -145,14 +141,11 @@
         </div>
       </div>
     </section>
-    <br>
-    <br>
-
-    <footer class="text-center">
+    <footer class="page-footer text-center">
       <div class="container project-container">
         <div class="row">
           <div class="col-12">
-            <h2>Citation</h2>
+            <h3><strong>Citation</strong></h3>
             <hr class="section-rule">
             <div class="bibtexsection text-left">@inproceedings{han2026websplatter,
   title={WebSplatter: Efficient and Faithful In-Browser 3D Gaussian Splatting across Devices via WebGPU},
@@ -162,7 +155,7 @@
   doi={10.1145/3767308.3835220}
 }</div>
             <hr>
-            <p>Thanks to <a href="https://lioryariv.github.io/idr/" target="_blank" rel="noreferrer">IDR</a> and <a href="https://yd-yin.github.io/SAI3D/" target="_blank" rel="noreferrer">SAI3D</a> for the project page template.</p>
+            <p class="template-credit">Website template adapted from the <a href="https://lioryariv.github.io/idr/" target="_blank" rel="noreferrer">IDR</a> and <a href="https://yd-yin.github.io/SAI3D/" target="_blank" rel="noreferrer">SAI3D</a> project pages.</p>
           </div>
         </div>
       </div>

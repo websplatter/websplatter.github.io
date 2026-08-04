@@ -1,10 +1,38 @@
-body {
-  background: rgb(255, 255, 255) no-repeat fixed top left;
-  font-family: 'Open Sans', sans-serif;
+:root {
+  --page-text: #212529;
+  --page-muted: #6c757d;
+  --page-primary: #007bff;
+  --page-border: #dee2e6;
+  --page-surface: #f8f9fa;
+  --page-radius: 14px;
 }
 
-.project-title {
+body {
+  background: rgb(255, 255, 255) no-repeat fixed top left;
+  color: var(--page-text);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--page-primary);
+}
+
+.hero-section {
+  margin-bottom: 44px;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  padding-top: 52px;
+  padding-bottom: 38px;
+  border-radius: 0;
+}
+
+.paper-title {
   font-size: 40px;
+  line-height: 1.25;
 }
 
 .venue-title {
@@ -12,45 +40,122 @@ body {
   font-size: 30px;
 }
 
-.authors {
+.jumbotron hr {
+  max-width: 1140px;
+  margin-top: 22px;
+}
+
+.author-list {
   line-height: 2;
 }
 
-.column {
-  padding: 0 5px;
+.resource-row .column {
+  margin: 0 5px;
 }
 
-.btn-large {
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 20px;
+.resource-row .btn {
+  min-width: 105px;
+  border: 1px solid #d9dee3;
 }
 
 .project-container {
   width: 70%;
-  max-width: 1140px;
+  max-width: 1040px;
+}
+
+.feature-container {
+  width: 92%;
+  max-width: 1400px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.feature-section,
+.content-section {
+  margin-bottom: 72px;
 }
 
 .section-rule {
   margin-top: 0;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
+.feature-card {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid #d5dbe1;
+  border-radius: var(--page-radius);
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .12);
+}
+
+.feature-card figcaption {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 17px 14px;
+  border-top: 1px solid #e1e5e9;
+  text-align: left;
+}
+
+.caption-copy strong {
+  display: block;
+  color: var(--page-text);
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.caption-copy small,
+.viewer-actions small {
+  display: block;
+  margin-top: 2px;
+  color: var(--page-muted);
+  font-size: 12px;
+}
+
+.viewer-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  text-align: right;
+}
+
+.viewer-actions a {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
 .demo-wrapper {
-  position: relative;
   overflow: hidden;
   width: 100%;
-  height: 650px;
+  height: clamp(480px, 55vw, 650px);
   background: #000;
 }
 
 .demo-wrapper iframe {
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-.demo-help {
-  margin-top: 10px;
+.method-figure {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto 24px;
+  padding: 26px;
+  border: 1px solid var(--page-border);
+  border-radius: 12px;
+  background: var(--page-surface);
 }
 
 .method-image {
@@ -58,42 +163,118 @@ body {
 }
 
 .result-row {
-  margin-top: 30px;
+  margin-top: 28px;
+}
+
+.result-surface {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 22px 10px 8px;
+  border: 1px solid var(--page-border);
+  border-radius: 12px;
+  background: var(--page-surface);
+}
+
+.result-surface p {
+  color: var(--page-muted);
+}
+
+.page-footer {
+  padding-bottom: 32px;
 }
 
 .bibtexsection {
-  font-family: monospace;
+  padding: 18px 24px;
+  border: 1px solid var(--page-border);
+  background: var(--page-surface);
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.45;
   white-space: pre-wrap;
 }
 
-@media (max-width: 991px) {
-  .project-container {
-    width: 90%;
-  }
-
-  .demo-wrapper {
-    height: 560px;
-  }
+.template-credit {
+  margin-bottom: 18px;
+  color: var(--page-muted);
+  font-size: 14px;
 }
 
-@media (max-width: 575px) {
-  .project-title {
-    font-size: 30px;
-  }
-
-  .venue-title {
-    font-size: 24px;
-  }
-
+@media (max-width: 991.98px) {
   .project-container {
+    width: 88%;
+  }
+
+  .feature-container {
     width: 96%;
   }
 
-  .demo-wrapper {
-    height: 480px;
+  .method-figure,
+  .result-surface {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    margin-bottom: 36px;
+  }
+
+  .jumbotron {
+    padding: 38px 15px 28px;
+  }
+
+  .paper-title {
+    font-size: 29px;
+  }
+
+  .venue-title {
+    font-size: 23px;
+  }
+
+  .author-list {
+    font-size: 17px;
+  }
+
+  .project-container,
+  .feature-container {
+    width: 100%;
+  }
+
+  .feature-container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .feature-section,
+  .content-section {
+    margin-bottom: 54px;
+  }
+
+  .feature-card {
+    border-radius: 10px;
+  }
+
+  .feature-card figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .viewer-actions {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .method-figure {
+    padding: 16px;
   }
 
   .method-image {
     width: 100%;
+  }
+
+  .text-justify {
+    text-align: left !important;
   }
 }
