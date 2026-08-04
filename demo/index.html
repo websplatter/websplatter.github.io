@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSplatter Demo · Van Gogh Room</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/index-7a970c52.js"></script>
+    <link rel="stylesheet" href="./assets/index-70dcbd27.css">
+  </head>
+  <body>
+    <div id="ui-panel-container" class="ui-panel">
+      <div class="ui-row">
+          <label for="sh-degree-input" class="ui-label">SH Degree:</label>
+          <input type="number" id="sh-degree-input" value="3" min="0" max="4" class="ui-input">
+      </div>
+      <div class="ui-row">
+          <label for="sort-select" class="ui-label">Sort:</label>
+          <select id="sort-select" class="ui-select">
+              <option value="none" selected>none</option>
+              <option value="morton">morton</option>
+          </select>
+      </div>
+    <div class="ui-row">
+      <label for="renderer-select" class="ui-label">Renderer:</label>
+      <select id="renderer-select" class="ui-select">
+        <option value="gaussian" selected>gaussian</option>
+        <option value="pointcloud">pointcloud</option>
+        <option value="tile_based">tile_based</option>
+      </select>
+    </div>
+    <div class="ui-row">
+      <label for="animation-checkbox" class="ui-label">Animate:</label>
+      <input type="checkbox" id="animation-checkbox" class="ui-checkbox">
+    </div>
+      <button id="load-button" class="ui-button">📂 Load Model from Disk</button>
+      <div id="quick-links" class="ui-links">
+          <!-- Links will be dynamically generated here -->
+      </div>
+    </div>
+    <div class="console">
+      <h4 id="title">WebSplatter · Van Gogh Room</h4>
+      <div id="log"></div>
+    </div>
+    <canvas id="webgpu-canvas" />
+    
+  </body>
+</html>
