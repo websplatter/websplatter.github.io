@@ -184,14 +184,77 @@ a {
   padding-bottom: 32px;
 }
 
+.citation-box {
+  position: relative;
+}
+
 .bibtexsection {
-  padding: 18px 24px;
+  padding: 58px 24px 18px;
   border: 1px solid var(--page-border);
   background: var(--page-surface);
   font-family: "Courier New", monospace;
   font-size: 14px;
   line-height: 1.45;
   white-space: pre-wrap;
+}
+
+.citation-copy {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 7px;
+  background: #fff;
+  color: #495057;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+
+.citation-copy:hover {
+  border-color: #adb5bd;
+  background: #f8f9fa;
+  color: var(--page-text);
+}
+
+.citation-copy:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, .18);
+}
+
+.copy-icon {
+  display: inline-flex;
+}
+
+.copy-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.copy-icon-success {
+  display: none;
+}
+
+.citation-copy.is-copied {
+  border-color: #a9d8b5;
+  background: #f0faf3;
+  color: #218838;
+}
+
+.citation-copy.is-copied .copy-icon-default {
+  display: none;
+}
+
+.citation-copy.is-copied .copy-icon-success {
+  display: inline-flex;
 }
 
 .template-credit {

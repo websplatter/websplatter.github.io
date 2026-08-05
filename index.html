@@ -147,13 +147,29 @@
           <div class="col-12">
             <h3><strong>Citation</strong></h3>
             <hr class="section-rule">
-            <div class="bibtexsection text-left">@inproceedings{han2026websplatter,
+            <div class="citation-box">
+              <button class="citation-copy" type="button" aria-label="Copy citation">
+                <span class="copy-icon copy-icon-default" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </span>
+                <span class="copy-icon copy-icon-success" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m20 6-11 11-5-5"></path>
+                  </svg>
+                </span>
+                <span class="copy-label">Copy</span>
+              </button>
+              <div class="bibtexsection text-left">@inproceedings{han2026websplatter,
   title={WebSplatter: Efficient and Faithful In-Browser 3D Gaussian Splatting across Devices via WebGPU},
   author={Han, Yudong and Xu, Chao and Ye, Xiaodan and Bi, Weichen and Xu, Xuanhuai and Dong, Zilong and Ma, Yun},
   booktitle={Proceedings of the 35th ACM International Conference on Multimedia},
   year={2026},
   doi={10.1145/3767308.3835220}
 }</div>
+            </div>
             <hr>
             <p class="template-credit">Website template adapted from the <a href="https://lioryariv.github.io/idr/" target="_blank" rel="noreferrer">IDR</a> and <a href="https://yd-yin.github.io/SAI3D/" target="_blank" rel="noreferrer">SAI3D</a> project pages.</p>
           </div>
@@ -163,5 +179,35 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
+    <script>
+      document.querySelectorAll('.citation-copy').forEach(function (button) {
+        button.addEventListener('click', async function () {
+          const citation = button.closest('.citation-box').querySelector('.bibtexsection').textContent.trim();
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(citation);
+            } else {
+              const textarea = document.createElement('textarea');
+              textarea.value = citation;
+              textarea.setAttribute('readonly', '');
+              textarea.style.position = 'fixed';
+              textarea.style.opacity = '0';
+              document.body.appendChild(textarea);
+              textarea.select();
+              const copied = document.execCommand('copy');
+              textarea.remove();
+              if (!copied) throw new Error('Copy command failed');
+            }
+
+            button.classList.add('is-copied');
+            button.querySelector('.copy-label').textContent = 'Copied!';
+            button.setAttribute('aria-label', 'Citation copied');
+          } catch (error) {
+            button.querySelector('.copy-label').textContent = 'Try again';
+          }
+        });
+      });
+    </script>
   </body>
 </html>
