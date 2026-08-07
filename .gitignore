@@ -1,0 +1,54 @@
+# ── OS / editor noise ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# ── Editor / IDE state ────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# ── Node tooling (only used if a future demo build is added) ─────────────
+node_modules/
+package-lock.json
+yarn.lock
+.npm/
+.yarn/
+
+# ── Python build artefacts (safety net for ad-hoc scripts) ───────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ── Build / cache output (kept narrow on purpose; the site is hand-written) ─
+dist/
+build/
+*.log
+.cache/
+
+# ── Large binary scene assets ────────────────────────────────────────────
+# Anything heavier than the bundled 5 MiB SPZ GLB should go through
+# Git LFS or external hosting rather than tracking here directly.
+*.ply
+*.splat
+*.spz
+*.ksplat
+demo/scenes/**/*.glb
+demo/scenes/**/*.gltf
+demo/scenes/**/*.bin
+demo/assets/index-*.js
+demo/assets/index-*.css
+demo/assets/*-worker-*.js
+
+# ── Secrets / local state ─────────────────────────────────────────────────
+.env
+.env.*
+*.pem
+*.key

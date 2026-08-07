@@ -1,0 +1,108 @@
+cff-version: 1.2.0
+message: |
+  If you use this project page, the bundled demo assets, or the
+  WebSplatter source in academic work, please cite the ACM Multimedia
+  2026 (MM '26) paper using the metadata below. Author and venue
+  metadata here are reconciled with /Volumes/Code/Arxiv-WebSplatter/main.tex.
+type: article
+title: "WebSplatter: Efficient and Faithful In-Browser 3D Gaussian Splatting across Devices via WebGPU"
+abstract: >-
+  3D Gaussian Splatting (3DGS) has become a core representation for
+  immersive multimedia on the web, powering volumetric video, dynamic
+  avatars, and interactive 3D experiences. While recent advances in
+  compression and streaming bring 3DGS content closer to end users,
+  existing web viewers naively port CUDA-based pipelines whose
+  synchronization and memory patterns do not generalize across GPU
+  architectures, causing rendering failures on non-NVIDIA and mobile
+  devices. We present WebSplatter, a WebGPU-native rendering framework
+  that eliminates these failure modes through a wait-free radix sort
+  and a hardware-accelerated rasterization pipeline with opacity-aware
+  quad sizing. Evaluated across eleven devices spanning five GPU
+  architectures, WebSplatter is the first web-based 3DGS renderer that
+  achieves cross-device reliability, rendering every benchmark scene on
+  every tested device without failure. WebSplatter delivers 1.1 to 2.5
+  times speedups over the surviving baselines and near-lossless fidelity
+  to the native CUDA renderer, with an average ΔPSNR of 0.07 dB.
+authors:
+  - family-names: Han
+    given-names: Yudong
+    email: hanyd@pku.edu.cn
+    orcid: https://orcid.org/0000-0003-4846-5803
+    affiliation: "Peking University, Institute for Artificial Intelligence, Beijing, China"
+  - family-names: Xu
+    given-names: Chao
+    email: xskyer@zju.edu.cn
+    orcid: https://orcid.org/0009-0009-1361-9914
+    affiliation: "Alibaba Group, Token Foundry, Hangzhou, China"
+  - family-names: Ye
+    given-names: Xiaodan
+    email: yexiaodan1993@gmail.com
+    orcid: https://orcid.org/0009-0004-4236-7684
+    affiliation: "Alibaba Group, Token Foundry, Hangzhou, China"
+  - family-names: Bi
+    given-names: Weichen
+    email: biweichen@pku.edu.cn
+    orcid: https://orcid.org/0000-0002-9465-910X
+    affiliation: "Peking University, Institute for Artificial Intelligence, Beijing, China"
+  - family-names: Xu
+    given-names: Xuanhuai
+    email: xuxu0005@e.ntu.edu.sg
+    orcid: https://orcid.org/0009-0005-7163-1824
+    affiliation: "Nanyang Technological University, Singapore, Singapore"
+  - family-names: Dong
+    given-names: Zilong
+    email: zjudzl@qq.com
+    orcid: https://orcid.org/0000-0002-6833-9102
+    affiliation: "Alibaba Group, Token Foundry, Hangzhou, China"
+  - family-names: Ma
+    given-names: Yun
+    email: mayun@pku.edu.cn
+    orcid: https://orcid.org/0000-0001-7866-4075
+    affiliation: "Peking University, Institute for Artificial Intelligence, Beijing, China"
+    corresponding: true
+contact:
+  - family-names: Ma
+    given-names: Yun
+    email: mayun@pku.edu.cn
+date-released: "2026-11-10"
+year: 2026
+month: 11
+publisher: "Association for Computing Machinery"
+journal: "Proceedings of the 34th ACM International Conference on Multimedia (MM '26)"
+conference:
+  name: "ACM Multimedia 2026 (MM '26)"
+  short-name: "MM '26"
+  edition: "34th ACM International Conference on Multimedia"
+  location: "Rio de Janeiro, Brazil"
+  start-date: "2026-11-10"
+  end-date: "2026-11-14"
+identifiers:
+  - type: doi
+    value: 10.1145/3767308.3835220
+  - type: isbn
+    value: 979-8-4007-2213-4
+  - type: url
+    value: https://websplatter.github.io/
+keywords:
+  - 3D Gaussian Splatting
+  - WebGPU
+  - Real-Time Rendering
+  - Cross-Device
+  - Web 3D Graphics
+references:
+  - type: article
+    title: "WebSplatter on arXiv"
+    identifiers:
+      - type: url
+        value: https://arxiv.org/abs/2602.03207
+  - type: software
+    title: "WebSplatter source code"
+    identifiers:
+      - type: url
+        value: https://github.com/websplatter/WebSplatter
+  - type: software
+    title: "WebSplatter project page"
+    identifiers:
+      - type: url
+        value: https://github.com/websplatter/websplatter.github.io
+license: CC-BY-4.0
