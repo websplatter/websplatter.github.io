@@ -1,0 +1,3 @@
+[submodule "vendor/WebSplatter"]
+	path = vendor/WebSplatter
+	url = https://github.com/websplatter/WebSplatter.git

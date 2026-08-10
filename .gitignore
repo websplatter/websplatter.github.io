@@ -30,6 +30,7 @@ venv/
 # ── Build / cache output (kept narrow on purpose; the site is hand-written) ─
 dist/
 build/
+_site/
 *.log
 .cache/
 
